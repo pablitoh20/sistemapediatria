@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600);
+
+* {
+border: 0;
+padding: 0;
+margin: 0;
+}
+
+body {
+font-family: 'Open Sans';
+font-size: 14px;
+background: #ddd;
+}
+
+.wrapper {
+width: 540px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.notification {
+height: auto;
+padding: 10px;
+border-bottom: #0a0;
+background: rgba(75,200,75,0.90);
+box-shadow: 0px 0px 2px rgba(0,0,0,0.35);
+text-align: center;
+position: fixed;
+top: 0px;
+width: 100%;
+font-size: 16px;
+color: #fff;
+text-shadow: 1px 1px 0px #999;
+display: none;
+}
+
+.info {
+border: 10px solid rgba(0,0,0,0.35);
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.info-inner {
+border: 1px solid #333;
+padding: 10px;
+background: #fff;
+}
+
+.button {
+background: #ddd;
+background: -webkit-linear-gradient(#ccc, #ddd);
+background: -moz-linear-gradient(#ccc, #ddd);
+background: -o-linear-gradient(#ccc, #ddd);
+background: -ms-linear-gradient(#ccc, #ddd);
+background: linear-gradient(#ccc, #ddd);
+border: 1px solid #bbb;
+border-radius: 5px;
+color: #777;
+float: left;
+line-height: 40px;
+font-size: 13px;
+font-weight: 400;
+height: 40px;
+padding: 0px 10px;
+text-shadow: 0 -1px 0 #fff;
+width: auto;
+cursor: pointer;
+margin: 0px 5px;
+}
+
+.button:hover, .button:focus {
+-webkit-animation: glow 800ms ease-out infinite alternate;
+-moz-animation: glow 800ms ease-out infinite alternate;
+-o-animation: glow 800ms ease-out infinite alternate;
+-ms-animation: glow 800ms ease-out infinite alternate;
+animation: glow 800ms ease-out infinite alternate;
+background: #ddd6dd;
+background: -webkit-linear-gradient(#ccc6cc, #ddd6dd);
+background: -moz-linear-gradient(#ccc6cc, #ddd6dd);
+background: -o-linear-gradient(#ccc6cc, #ddd6dd);
+background: -ms-linear-gradient(#ccc6cc, #ddd6dd);
+background: linear-gradient(#ccc6cc, #ddd6dd);
+border-color: #ccc6cc;
+color: #101;
+outline: none;
+}
+
+@-webkit-keyframes glow {
+  0% {
+  border-color: #393;
+  }
+  100% {
+  border-color: #6f6;
+  }
+}
+
+@-moz-keyframes glow {
+  0% {
+  border-color: #393;
+  }
+  100% {
+  border-color: #6f6;
+  box-shadow: 0px 0px 10px #0f0;
+  }
+}
+
+@-o-keyframes glow {
+  0% {
+  border-color: #393;
+  }
+  100% {
+  border-color: #6f6;
+  box-shadow: 0px 0px 10px #0f0;
+  }
+}
+
+@-ms-keyframes glow {
+  0% {
+  border-color: #393;
+  }
+  100% {
+  border-color: #6f6;
+  box-shadow: 0px 0px 10px #0f0;
+  }
+}
+
+@keyframes glow {
+  0% {
+  border-color: #393;
+  }
+  100% {
+  border-color: #6f6;
+  box-shadow: 0px 0px 10px #0f0;
+  }
+}

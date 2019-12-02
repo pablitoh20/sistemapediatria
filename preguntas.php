@@ -76,7 +76,7 @@ include('header.php');
                         echo "<tr data-name='$id'>
                               <td style='width:10px;'><a href='editar.php?id=$id'>".$id."</a></td>
                               <td>". $pre."</td>
-                              <td style='width:5px; height:5px;'> <input style='width:20px;' name='conjunto_de_preguntas[]'  class='form-control' type='checkbox' name='' value=''></td>
+                              <td style='width:5px; height:5px;'> <input style='width:20px;' name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
                               <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
                           </tr> ";
                       }

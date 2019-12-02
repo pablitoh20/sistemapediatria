@@ -9,12 +9,8 @@ require_once('header.php');
 
     <?php include('menu.php'); ?>
     <?php if (isset($_POST['button'])) {
+      sleep(2);
       guardarPregunta($_POST);
-      echo "
-      <script>
-        $('.notification').slideDown('slow');
-        window.setTimeout(close1,2500);
-      </script>";
     } ?>
 
     <!-- Content Wrapper -->
@@ -53,15 +49,12 @@ require_once('header.php');
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput">Pregunta:</label>
-                  <input required type="text" class="form-control" name="pregunta" placeholder="Pregunta">
+                  <label for="formGroupExampleInput2">Opciones</label>
+                  <textarea name="content" class="form-control" id="editorAgregar" rows="8" cols="80"></textarea>
+
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput2">Respuesta</label>
-                  <textarea name="content" class="form-control" rows="8" cols="80"></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="" class="btn btn-primary " name="button">Agregar</button>
+                  <button type="" class="btn btn-primary " onclick="SubmitForm()" name="button">Agregar</button>
                 </div>
               </form>
             </div>
@@ -72,9 +65,5 @@ require_once('header.php');
 
       </div>
       <!-- End of Main Content -->
-      <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
 
     <?php include('footer.php') ?>
-<script type="text/javascript">
-
-</script>

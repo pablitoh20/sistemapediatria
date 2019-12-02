@@ -41,11 +41,9 @@ function getNumeroDePreguntas($año){
 function guardarPregunta($parametros){
   global $con;
   $curso=$parametros['year'];
-  $pregunta=$parametros['pregunta'];
-  $respuesta=$parametros['content'];
-  $fecha=date('Y-m-d');
-  $query="INSERT INTO `preguntas`(`curso`, `pregunta`, `respuesta`)
-                VALUES ($curso,'$pregunta','$respuesta')";
+  $pregunta=$parametros['content'];
+  $query="INSERT INTO `preguntas`(`curso`, `pregunta`)
+                VALUES ($curso,'$pregunta')";
   if (mysqli_query($con,$query)) {
     return 1;
   }else {
@@ -63,8 +61,14 @@ function actualizarPregunta($param){
   global $con;
   $id=$param['id'];
   $curso=$param['year'];
-  $pregunta=$param['pregunta'];
-  $respuesta=$param['content'];
-  $query="UPDATE `preguntas` SET `curso`=$curso,`pregunta`='$pregunta',`respuesta`='$respuesta' WHERE id_pregunta=$id";
+  $pregunta=$param['content'];
+  $query="UPDATE `preguntas` SET `curso`=$curso,`pregunta`='$pregunta' WHERE id_pregunta=$id";
   $query_result=mysqli_query($con,$query);
+}
+
+function eliminar_pregunta($id){
+  global $con;
+  $query="DELETE FROM preguntas WHERE id_pregunta=$id";
+  $query_result=mysqli_query($con,$query);
+  return $query_result;
 }

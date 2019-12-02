@@ -41,7 +41,7 @@ include('funciones.php'); ?>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="preguntas.php?curso=1">Preguntas (<?php echo getNumeroDePreguntas(1); ?>)</a>
+        <a class="collapse-item" href="preguntas.php?curso=1">Preguntas </a>
       </div>
     </div>
   </li>
@@ -55,7 +55,7 @@ include('funciones.php'); ?>
     </a>
     <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="preguntas.php?curso=2">Preguntas (<?php echo getNumeroDePreguntas(2); ?>)</a>
+        <a class="collapse-item" href="preguntas.php?curso=2">Preguntas </a>
 
       </div>
     </div>
@@ -70,7 +70,7 @@ include('funciones.php'); ?>
     </a>
     <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="preguntas.php?curso=3">Preguntas (<?php echo getNumeroDePreguntas(3); ?>)</a>
+        <a class="collapse-item" href="preguntas.php?curso=3">Preguntas </a>
 
       </div>
     </div>
@@ -84,7 +84,7 @@ include('funciones.php'); ?>
     </a>
     <div id="collapseFive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="preguntas.php?curso=4">Preguntas (<?php echo getNumeroDePreguntas(4); ?>)</a>
+        <a class="collapse-item" href="preguntas.php?curso=4">Preguntas</a>
 
       </div>
     </div>

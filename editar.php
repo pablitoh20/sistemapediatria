@@ -59,15 +59,12 @@ require_once('header.php');
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput">Pregunta:</label>
-                  <input required type="text" value="<?php if(isset($pregunta[2])){echo $pregunta[2];} ?>" class="form-control" name="pregunta" placeholder="Pregunta">
+                  <label for="formGroupExampleInput2">Pregunta</label>
+                  <textarea name="content"   value="" id="editorEditar" rows="8" cols="80"><?php if(isset($pregunta[2])){echo $pregunta[2];} ?></textarea>
                 </div>
+
                 <div class="form-group">
-                  <label for="formGroupExampleInput2">Respuesta</label>
-                  <textarea name="content" placeholder="" value="<?php if(isset($pregunta[3])){echo $pregunta[3];} ?>" class="form-control" rows="8" cols="80"><?php if(isset($pregunta[3])){echo $pregunta[3];} ?></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary" onclick="SubmitForm()" name="button">Actualizar</button>
+                  <button type="" class="btn btn-primary " onclick="SubmitForm()" name="button">Actualizar</button>
                 </div>
               </form>
             </div>

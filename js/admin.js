@@ -1,8 +1,17 @@
 $(document).ready(function(){
-  var editorAgregar = new FroalaEditor('#editorAgregar');
-  var editorEditar = new FroalaEditor('#editorEditar');
 
   $("#descarga").click(function(){
+    if ($(".seleccionar:checked").length > 0) {
+      var selecteditems = [];
+
+        $(".seleccionar").find("input:checked").each(function (i, ob) {
+            selecteditems.push($(ob).val());
+        });
+        console.log(selecteditems);
+    }
+  });
+
+  $("#descarga_aleatorea").click(function(){
     if ($(".seleccionar:checked").length > 0) {
       var selecteditems = [];
 

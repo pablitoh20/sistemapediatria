@@ -54,8 +54,9 @@ include('header.php');
 
             <div class="card-body">
 
+              <button type="button"id="descarga_aleatorea"  class="btn btn-success" name="button">Descarga Aleatorea</button>&nbsp
+              <input type="text" name="" style="display:inline;" placeholder="cant pregs"  class="form-control col-sm-1" value=""><br><br>
               <button type="submit" class="btn btn-success pull-right" id="descarga" value="<?php $_GET['curso'] ?>">Descargar</button>&nbsp&nbsp<span><strong>Preguntas seleccionadas: <span id="seleccionadas">0</span></strong></span><br></br>
-
               <div class="table-responsive">
 
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

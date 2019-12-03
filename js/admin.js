@@ -12,14 +12,10 @@ $(document).ready(function(){
   });
 
   $("#descarga_aleatorea").click(function(){
-    if ($(".seleccionar:checked").length > 0) {
-      var selecteditems = [];
 
-        $(".seleccionar").find("input:checked").each(function (i, ob) {
-            selecteditems.push($(ob).val());
-        });
-        console.log(selecteditems);
-    }
+    var data = 'cantidad=' + $('#cant_pregs').val() + "&curso="+$("#curso").val();
+      $.ajax({type:'POST',data:data,url: './ajax/ajax_descarga_aleatorea.php',	success: function(result){
+      }});
   });
 });
 function eliminarPregunta(id){

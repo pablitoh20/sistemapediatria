@@ -1,6 +1,6 @@
 <?php
-require_once('funciones.php');
-require_once('header.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/funciones.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/header.php');
 if (isset($_POST['login'])) {
   login($_POST);
 }

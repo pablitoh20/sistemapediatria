@@ -19,7 +19,7 @@ function login($params){
            $_SESSION['user']=$row['user'];
            $_SESSION['user_id']=$row['user_id'];
 
-           header("Location: /SistemaDeExamenes/inicio.php");
+           header("Location: /sistemapediatria/inicio.php");
          }
         }
   }

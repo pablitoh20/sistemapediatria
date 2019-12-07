@@ -53,38 +53,41 @@ include('header.php');
             </div>
 
             <div class="card-body">
-              <input type="hidden" name="" id="curso" value="<?php echo $idCurso ?>">
               <button type="button"id="descarga_aleatorea"  class="btn btn-success" name="button">Descarga Aleatorea</button>&nbsp
               <input type="text" name="" style="display:inline;" placeholder="cant pregs" id="cant_pregs"  class="form-control col-sm-1" value=""><br><br>
-              <button type="submit" class="btn btn-success pull-right" id="descarga" value="<?php $_GET['curso'] ?>">Descargar</button>&nbsp&nbsp<span><strong>Preguntas seleccionadas: <span id="seleccionadas">0</span></strong></span><br></br>
+              <button type="submit" form="form1" class="btn btn-success pull-right"  id="descarga" value="<?php $_GET['curso'] ?>">Descargar</button>&nbsp&nbsp<span><strong>Preguntas seleccionadas: <span id="seleccionadas">0</span></strong></span><br></br>
               <div class="table-responsive">
 
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<form class="" action="ajax/ajax_descarga_manual.php" method="POST" id="form1">
+  <input type="hidden" name="curso" id="curso" value="<?php echo $idCurso ?>">
+  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-                  <thead>
-                    <tr>
-                      <th>Número</th>
-                      <th>Pregúnta</th>
-                      <th>Seleccionar</th>
-                      <th>Eliminar</th>
-                    </tr>
-                  </thead>
-                    <?php
-                      $preguntas=getPreguntas($_GET['curso']);
-                      while ($pregunta = mysqli_fetch_array($preguntas)) {
-                        $id=$pregunta['id_pregunta'];
-                        $pre=$pregunta['pregunta'];
-                        echo "<tr data-name='$id'>
-                              <td style='width:10px;'><a href='editar.php?id=$id'>".$id."</a></td>
-                              <td>". $pre."</td>
-                              <td style='width:5px; height:5px;'> <input style='width:20px;' name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
-                              <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
-                          </tr> ";
-                      }
-                     ?>
-                  <tbody>
-                  </tbody>
-                </table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Pregúnta</th>
+        <th>Seleccionar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+      <?php
+        $preguntas=getPreguntas($_GET['curso']);
+        while ($pregunta = mysqli_fetch_array($preguntas)) {
+          $id=$pregunta['id_pregunta'];
+          $pre=htmlspecialchars_decode($pregunta['pregunta']);
+          echo "<tr data-name='$id'>
+                <td style='width:10px;'><a href='editar.php?id=$id'>".$id."</a></td>
+                <td>". $pre."</td>
+                <td style='width:5px; height:5px;'> <input style='width:20px;'  name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
+                <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
+            </tr> ";
+        }
+       ?>
+    <tbody>
+    </tbody>
+  </table>
+</form>
+
               </div>
             </div>
           </div>

@@ -67,3 +67,21 @@ require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/header.php');
       <!-- End of Main Content -->
 
     <?php include('footer.php') ?>
+    <script src="https://cdn.tiny.cloud/1/9qsxcm5ia9lc28qmi8mm8gkwtuyfovbzfair4ml34ya4uhqp/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+      selector: '#editorAgregar',
+      height: 400,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar: 'undo redo | formatselect | ' +
+      ' bold italic backcolor | alignleft aligncenter ' +
+      ' alignright alignjustify | bullist numlist outdent indent |' +
+      ' removeformat | help',
+
+    });
+    </script>

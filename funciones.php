@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/conexion.php');
 function login($params){
        global $con;
        $username=$params['user'];
@@ -38,7 +39,7 @@ function getNumeroDePreguntas($año){
 function guardarPregunta($parametros){
   global $con;
   $curso=$parametros['year'];
-  $pregunta=$parametros['content'];
+  $pregunta=htmlspecialchars($parametros['content']);
   $query="INSERT INTO `preguntas`(`curso`, `pregunta`)
                 VALUES ($curso,'$pregunta')";
   if (mysqli_query($con,$query)) {
@@ -68,4 +69,20 @@ function eliminar_pregunta($id){
   $query="DELETE FROM preguntas WHERE id_pregunta=$id";
   $query_result=mysqli_query($con,$query);
   return $query_result;
+}
+
+function preguntas_descarga_manual($curso,$ids){
+  global $con;
+  $ids=implode(',',$ids);
+
+  $query="SELECT * FROM preguntas WHERE curso=$curso AND id_pregunta IN ($ids)";
+  $query_result=mysqli_query($con,$query);
+  $i=1;
+  $pregunta='';
+  while($arrow=mysqli_fetch_array($query_result,MYSQLI_ASSOC)){
+    $pregunta.=$i.") ".htmlspecialchars_decode(html_entity_decode($arrow['pregunta']))."\n";
+    $i++;
+  }
+
+  return $pregunta;
 }

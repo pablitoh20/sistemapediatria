@@ -1,15 +1,8 @@
 $(document).ready(function(){
-
-  $("#descarga").click(function(){
-    if ($(".seleccionar:checked").length > 0) {
-      var selecteditems = [];
-
-        $(".seleccionar").find("input:checked").each(function (i, ob) {
-            selecteditems.push($(ob).val());
-        });
-        console.log(selecteditems);
-    }
+  $('.seleccionar').click(function(){
+    document.getElementById("seleccionadas").textContent=$(".seleccionar:checked").length
   });
+  
 
   $("#descarga_aleatorea").click(function(){
 

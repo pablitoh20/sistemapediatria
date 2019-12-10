@@ -1,11 +1,11 @@
 <?php
 
-$host='ec2-174-129-253-27.compute-1.amazonaws.com';
-$user='xscqjrpsobfewa';
-$pass='b6a846234b9c08a39cd8dda7a751bdb24e719e9d69706e7159964a3c37f58fcd';
-$db='d6i0htst325322';
+$host='';
+$user='';
+$pass='';
+$db='';
 
-$con = pg_connect("host=$host dbname=$user user=$pass password=$db");
+$con = pg_connect("host=ec2-174-129-253-27.compute-1.amazonaws.com dbname=d6i0htst325322 user=xscqjrpsobfewa password=b6a846234b9c08a39cd8dda7a751bdb24e719e9d69706e7159964a3c37f58fcd");
 
 
 

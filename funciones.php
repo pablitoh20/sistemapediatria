@@ -39,9 +39,10 @@ function getNumeroDePreguntas($año){
 function guardarPregunta($parametros){
   global $con;
   $curso=$parametros['year'];
-  $pregunta=htmlspecialchars($parametros['content']);
-  $query="INSERT INTO `preguntas`(`curso`, `pregunta`)
-                VALUES ($curso,'$pregunta')";
+  $pregunta=$parametros['content'];
+  $respuesta=$parametros['respuesta'];
+  $query="INSERT INTO `preguntas`(`curso`, `pregunta`,`respuesta`)
+                VALUES ($curso,'$pregunta','$respuesta')";
   if (mysqli_query($con,$query)) {
     return 1;
   }else {
@@ -60,7 +61,12 @@ function actualizarPregunta($param){
   $id=$param['id'];
   $curso=$param['year'];
   $pregunta=$param['content'];
-  $query="UPDATE `preguntas` SET `curso`=$curso,`pregunta`='$pregunta' WHERE id_pregunta=$id";
+  $respuesta=$param['respuesta'];
+  $fecha_modificacion=date('Y-m-d');
+
+  $query="UPDATE `preguntas`
+          SET `curso`=$curso,`pregunta`='$pregunta',`respuesta`='$respuesta',`fecha_modificacion`='$fecha_modificacion'
+          WHERE id_pregunta=$id";
   $query_result=mysqli_query($con,$query);
 }
 
@@ -71,7 +77,7 @@ function eliminar_pregunta($id){
   return $query_result;
 }
 
-function preguntas_descarga_manual($curso,$ids){
+function preguntas_descarga_manual($curso,$ids,$respuesta){
   global $con;
   $ids=implode(',',$ids);
 
@@ -80,9 +86,15 @@ function preguntas_descarga_manual($curso,$ids){
   $i=1;
   $pregunta='';
   while($arrow=mysqli_fetch_array($query_result,MYSQLI_ASSOC)){
-    $pregunta.=$i.") ".htmlspecialchars_decode(html_entity_decode($arrow['pregunta']))."\n";
+    $cuerpo_pregunta=$arrow['pregunta'];
+
+    $pregunta.="$i)$cuerpo_pregunta";
     $i++;
+    if ($respuesta) {
+      $pregunta.=" <strong style='background-color: #FFFF00'>RESPUESTA: ".$arrow['respuesta']."</strong><br>";
+    }
   }
+
 
   return $pregunta;
 }

@@ -55,38 +55,52 @@ include('header.php');
             <div class="card-body">
               <button type="button"id="descarga_aleatorea"  class="btn btn-success" name="button">Descarga Aleatorea</button>&nbsp
               <input type="text" name="" style="display:inline;" placeholder="cant pregs" id="cant_pregs"  class="form-control col-sm-1" value=""><br><br>
-              <button type="submit" form="form1" class="btn btn-success pull-right"  id="descarga" value="<?php $_GET['curso'] ?>">Descargar</button>&nbsp&nbsp<span><strong>Preguntas seleccionadas: <span id="seleccionadas">0</span></strong></span><br></br>
+              <button type="submit" form="form1" class="btn btn-success pull-right"  id="descarga" value="<?php $_GET['curso'] ?>">Descargar Seleccionadas</button>&nbsp&nbsp<span><strong>Preguntas seleccionadas: <span id="seleccionadas">0</span></strong></span><br></br>
+
               <div class="table-responsive">
 
-<form class="" action="ajax/ajax_descarga_manual.php" method="POST" id="form1">
-  <input type="hidden" name="curso" id="curso" value="<?php echo $idCurso ?>">
-  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <form class="" action="ajax/ajax_descarga_manual.php" method="POST" id="form1">
+                  <table>
+                    <td style="padding-bottom:7px;">Descarga con respuestas</td>
+                    <td>&nbsp&nbsp<input class="form-control " style="width:20px; display:inline;" type="checkbox" name="descarga_con_respuestas" value="1"> </td>
+                  </table>
+                  <input type="hidden" name="curso" id="curso" value="<?php echo $idCurso ?>">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-    <thead>
-      <tr>
-        <th>Número</th>
-        <th>Pregúnta</th>
-        <th>Seleccionar</th>
-        <th>Eliminar</th>
-      </tr>
-    </thead>
-      <?php
-        $preguntas=getPreguntas($_GET['curso']);
-        while ($pregunta = mysqli_fetch_array($preguntas)) {
-          $id=$pregunta['id_pregunta'];
-          $pre=htmlspecialchars_decode($pregunta['pregunta']);
-          echo "<tr data-name='$id'>
-                <td style='width:10px;'><a href='editar.php?id=$id'>".$id."</a></td>
-                <td>". $pre."</td>
-                <td style='width:5px; height:5px;'> <input style='width:20px;'  name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
-                <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
-            </tr> ";
-        }
-       ?>
-    <tbody>
-    </tbody>
-  </table>
-</form>
+                    <thead>
+                      <tr>
+                        <th>Número</th>
+                        <th>Pregúnta</th>
+                        <th>Respuesta</th>
+                        <th>Fecha creación</th>
+                        <th>Fecha modificación</th>
+                        <th>Seleccionar</th>
+                        <th>Eliminar</th>
+                      </tr>
+                    </thead>
+                      <?php
+                        $preguntas=getPreguntas($_GET['curso']);
+                        while ($pregunta = mysqli_fetch_array($preguntas)) {
+                          $id=$pregunta['id_pregunta'];
+                          $pre=htmlspecialchars_decode($pregunta['pregunta']);
+                          $fecha_creacion=$pregunta['fecha_creacion'];
+                          $fecha_modificacion=$pregunta['fecha_modificacion'] != "0000-00-00" ? $pregunta['fecha_modificacion'] : "";
+                          $respuesta=$pregunta['respuesta'] != "" ? $pregunta['respuesta'] : "";
+                          echo "<tr data-name='$id'>
+                                <td style='width:10px;'><a href='editar.php?id=$id'>".$id."</a></td>
+                                <td>". $pre."</td>
+                                <td>". $respuesta."</td>
+                                <td>". $fecha_creacion."</td>
+                                <td>". $fecha_modificacion."</td>
+                                <td style='width:5px; height:5px;'> <input style='width:20px;'  name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
+                                <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
+                            </tr> ";
+                        }
+                       ?>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </form>
 
               </div>
             </div>

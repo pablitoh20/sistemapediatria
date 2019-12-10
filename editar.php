@@ -60,6 +60,10 @@ require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/header.php');
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="year">Respuesta correcta:</label>
+                  <input type="text" name="respuesta" value="<?php if(isset($pregunta[3])){echo $pregunta[3];} ?>" class="form-control" placeholder="respuesta correcta">
+                </div>
+                <div class="form-group">
                   <label for="formGroupExampleInput2">Pregunta</label>
                   <textarea name="content" class="form-control"   value="" id="mytextarea" rows="8" cols="100"><?php if(isset($pregunta[2])){echo $pregunta[2];} ?></textarea>
                 </div>

@@ -94,7 +94,7 @@ include('header.php');
                                 <td>". $fecha_creacion."</td>
                                 <td>". $fecha_modificacion."</td>
                                 <td style='width:5px; height:5px;'> <input style='width:20px;'  name='conjunto_de_preguntas[]' value=".$id." class='form-control seleccionar' type='checkbox' name='' value=''></td>
-                                <td><button class='btn btn-danger eliminar_pregunta' onclick='eliminarPregunta($id)' >Eliminar</button></td>
+                                <td><button class='btn btn-danger eliminar_pregunta' value=".$id." >Eliminar</button></td>
                             </tr> ";
                         }
                        ?>

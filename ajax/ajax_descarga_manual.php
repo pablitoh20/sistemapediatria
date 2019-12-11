@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/funciones.php');
+include('../funciones.php');
 $curso = $_POST['curso'];
 $conjunto_de_preguntas=$_POST['conjunto_de_preguntas'];
 

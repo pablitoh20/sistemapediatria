@@ -92,7 +92,7 @@ function preguntas_descarga_manual($curso,$ids,$respuesta){
   $query_result=pg_query($con,$query);
   $i=1;
   $pregunta='';
-  while($arrow=mysqli_fetch_array($query_result,MYSQLI_ASSOC)){
+  while($arrow=pg_fetch_array($query_result,MYSQLI_ASSOC)){
     $cuerpo_pregunta=$arrow['pregunta'];
 
     $pregunta.="$i)$cuerpo_pregunta";

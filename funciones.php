@@ -4,7 +4,7 @@ if (getenv('MY_VAR') == 1) {
 }else {
   $app="";
 }
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/conexion.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/conexion.php');
 function login($params){
        global $con;
        $username=$params['user'];

@@ -4,5 +4,5 @@ if (getenv('MY_VAR') == 1) {
 }else {
   $app="";
 }
-header("Location: $app/login.php");
+header("Location: $app/sistemapediatria/login.php");
 ?>

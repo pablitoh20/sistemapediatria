@@ -50,8 +50,8 @@ function guardarPregunta($parametros){
   $respuesta=$parametros['respuesta'];
   $fecha_modificacion=date('Y-m-d');
 
-  $query="INSERT INTO preguntas(id_pregunta,curso,pregunta,respuesta,fecha_creacion)
-                VALUES (nextval('id_pregunta'),$curso,'$pregunta','$respuesta','$fecha_modificacion')";
+  $query="INSERT INTO preguntas(curso,pregunta,respuesta,fecha_creacion)
+                VALUES ($curso,'$pregunta','$respuesta','$fecha_modificacion')";
   if (pg_query($con,$query)) {
     return 1;
   }else {
@@ -73,8 +73,8 @@ function actualizarPregunta($param){
   $respuesta=$param['respuesta'];
   $fecha_modificacion=date('Y-m-d');
 
-  $query="UPDATE `preguntas`
-          SET `curso`=$curso,`pregunta`='$pregunta',`respuesta`='$respuesta',`fecha_modificacion`='$fecha_modificacion'
+  $query="UPDATE preguntas
+          SET curso=$curso,pregunta='$pregunta',respuesta='$respuesta',fecha_modificacion='$fecha_modificacion'
           WHERE id_pregunta=$id";
   $query_result=pg_query($con,$query);
 }
@@ -94,7 +94,7 @@ function preguntas_descarga_manual($curso,$ids,$respuesta){
   $query_result=pg_query($con,$query);
   $i=1;
   $pregunta='';
-  while($arrow=pg_fetch_array($query_result,MYSQLI_ASSOC)){
+  while($arrow=pg_fetch_array($query_result)){
     $cuerpo_pregunta=$arrow['pregunta'];
 
     $pregunta.="$i)$cuerpo_pregunta";

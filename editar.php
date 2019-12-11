@@ -36,7 +36,7 @@ require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/header.php');
         <div class="container-fluid">
           <?php
           if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-            $pregunta=mysqli_fetch_row(buscarPregunta($_GET['id']));
+            $pregunta=pg_fetch_row(buscarPregunta($_GET['id']));
             $value1 = (1 == $pregunta[1]) ? 'selected' : ''; // $r is set to 'Yes'
             $value2 = (2 == $pregunta[1]) ? 'selected' : ''; // $r is set to 'Yes'
             $value3 = (3 == $pregunta[1]) ? 'selected' : ''; // $r is set to 'Yes'

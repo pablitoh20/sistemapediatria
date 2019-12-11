@@ -7,7 +7,7 @@ $db='SistemaExamenesPediatria';
 
 $con=mysqli_connect($host,$user,$pass,$db) or die();
 */
-$con = pg_connect("host=ec2-174-129-253-27.compute-1.amazonaws.com dbname=d6i0htst325322 user=xscqjrpsobfewa password=b6a846234b9c08a39cd8dda7a751bdb24e719e9d69706e7159964a3c37f58fcd");
+$con = pg_connect("host=ec2-174-129-254-217.compute-1.amazonaws.com dbname=d2rhleqfkoibp user=mnebvrgxcnyoqs password=635159d96965b30d026ab51bb6b5e7d68ac38817df4de895a45804659f849708");
 
 
 /*para conexion servidor */

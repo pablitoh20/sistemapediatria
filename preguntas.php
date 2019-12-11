@@ -1,4 +1,5 @@
 <?php
+
 include('header.php');
   $curso="";
   $idCurso=$_GET['curso'];
@@ -80,7 +81,7 @@ include('header.php');
                     </thead>
                       <?php
                         $preguntas=getPreguntas($_GET['curso']);
-                        while ($pregunta = mysqli_fetch_array($preguntas)) {
+                        while ($pregunta = pg_fetch_array($preguntas)) {
                           $id=$pregunta['id_pregunta'];
                           $pre=htmlspecialchars_decode($pregunta['pregunta']);
                           $fecha_creacion=$pregunta['fecha_creacion'];

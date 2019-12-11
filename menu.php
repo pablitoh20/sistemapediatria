@@ -1,5 +1,10 @@
 <?php
-include('funciones.php'); ?>
+if (getenv('MY_VAR') == 1) {
+  $app="/app";
+}else {
+  $app="";
+}
+require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/funciones.php'); ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

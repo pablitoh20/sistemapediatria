@@ -1,5 +1,7 @@
 <?php
-
+if (!session_start()) {
+  die('error');
+}else {
 
 include('header.php'); ?>
 
@@ -37,4 +39,6 @@ include('header.php'); ?>
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <?php include('footer.php') ?>
+      <?php include('footer.php');   // code...
+      }
+?>

@@ -1,5 +1,5 @@
 <?php
-if (getenv('MY_VAR') == 1) {
+if (getenv('LIVE') == 1) {
   $app="/app";
 }else {
   $app="";

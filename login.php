@@ -4,7 +4,7 @@ if (getenv('MY_VAR') == 1) {
 }else {
   $app="";
 }
-require_once($app.'/sistemapediatria/funciones.php');
+require_once('/app/sistemapediatria/funciones.php');
 require_once($app.'/sistemapediatria/header.php');
 if (isset($_POST['login'])) {
   login($_POST);

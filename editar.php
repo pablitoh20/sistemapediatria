@@ -4,8 +4,7 @@ if (getenv('LIVE') == 1) {
 }else {
   $app="";
 }
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/header.php');
-
+include('header.php');
  ?>
 
 <body id="page-top">

@@ -1,9 +1,5 @@
 <?php
-if (getenv('MY_VAR') == 1) {
-  $app="/app";
-}else {
-  $app="";
-}
+
 include('funciones.php');
 include('header.php');
 

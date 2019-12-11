@@ -1,10 +1,5 @@
 <?php
-if (getenv('LIVE') == 1) {
-  $app="/app";
-}else {
-  $app="";
-}
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/conexion.php');
+include('conexion.php');
 function login($params){
        global $con;
        $username=$params['user'];

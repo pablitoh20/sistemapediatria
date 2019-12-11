@@ -1,10 +1,6 @@
 <?php
-if (getenv('LIVE') == 1) {
-  $app="/app";
-}else {
-  $app="";
-}
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/funciones.php'); ?>
+
+include('funciones.php') ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 

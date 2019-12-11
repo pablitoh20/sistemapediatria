@@ -48,8 +48,10 @@ function guardarPregunta($parametros){
   $curso=$parametros['year'];
   $pregunta=$parametros['content'];
   $respuesta=$parametros['respuesta'];
-  $query="INSERT INTO `preguntas`(`curso`, `pregunta`,`respuesta`)
-                VALUES ($curso,'$pregunta','$respuesta')";
+  $fecha_modificacion=date('Y-m-d');
+
+  $query="INSERT INTO preguntas(id_pregunta,curso,pregunta,respuesta,fecha_creacion)
+                VALUES (nextval('id_pregunta'),$curso,'$pregunta','$respuesta','$fecha_modificacion')";
   if (pg_query($con,$query)) {
     return 1;
   }else {

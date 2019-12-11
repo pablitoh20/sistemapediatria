@@ -1,4 +1,3 @@
 <?php
-
-header("Location: app/login.php");
+header("Location: login.php");
 ?>

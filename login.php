@@ -1,11 +1,7 @@
 <?php
-if (getenv('LIVE') == 1) {
-  $app="/app";
-}else {
-  $app="";
-}
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/funciones.php');
-require_once($_SERVER["DOCUMENT_ROOT"].$app.'/sistemapediatria/header.php');
+
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/funciones.php');
+require_once($_SERVER["DOCUMENT_ROOT"].'/sistemapediatria/header.php');
 if (isset($_POST['login'])) {
   login($_POST);
 }

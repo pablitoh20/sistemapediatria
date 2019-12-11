@@ -19,7 +19,7 @@ function login($params){
            $_SESSION['user']=$row['nombre_usuario'];
            $_SESSION['user_id']=$row['nombre_usuario'];
 
-           header("Location: /sistemapediatria/inicio.php");
+           header("Location: inicio.php");
          }
         }
   }

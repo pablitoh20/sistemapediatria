@@ -20,8 +20,8 @@ if (isset($_POST['login'])) {
 
     <!-- Login Form -->
     <form class="" action="" method="post">
-      <input type="text" id="user" class="fadeIn second" name="user" placeholder="Usuario">
-      <input  style="-webkit-text-security: disc;-moz-text-security: disc;" type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <input autocomplete="off" type="text" id="user" class="fadeIn second" name="user" placeholder="Usuario">
+      <input autocomplete="off"  style="-webkit-text-security: disc;-moz-text-security: disc;" type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
       <input type="submit" name="login" class="fadeIn fourth" value="Log In">
     </form>
 

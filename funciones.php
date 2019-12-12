@@ -13,12 +13,10 @@ function login($params){
          die("QUERY FAILED".''.mysqli_error($con));
        }else {
          $row=pg_fetch_array($query_login_result);
-         var_dump($row);
          if (($username == $row['nombre_usuario'])&&(md5($pass) == $row['password'])){ //me logeo
            session_start();
            $_SESSION['user']=$row['nombre_usuario'];
            $_SESSION['user_id']=$row['nombre_usuario'];
-
            header("Location: inicio.php");
          }
         }

@@ -2,8 +2,6 @@
 
 include('funciones.php');
 include('header.php');
-
-
 if (isset($_POST['login'])) {
   login($_POST);
 }
@@ -23,7 +21,7 @@ if (isset($_POST['login'])) {
     <!-- Login Form -->
     <form class="" action="" method="post">
       <input type="text" id="user" class="fadeIn second" name="user" placeholder="Usuario">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <input  style="-webkit-text-security: disc;-moz-text-security: disc;" type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
       <input type="submit" name="login" class="fadeIn fourth" value="Log In">
     </form>
 

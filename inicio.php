@@ -1,7 +1,10 @@
 <?php
-if (!session_start()) {
-  die('error');
+session_start();
+if (!isset($_SESSION['user'])) {
+  echo "error";die();
 }else {
+
+
 
 include('header.php'); ?>
 
@@ -40,5 +43,7 @@ include('header.php'); ?>
 
       <!-- Footer -->
       <?php include('footer.php');   // code...
-      }
+      // code...
+    }
+
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 include('funciones.php');
 include('header.php');
 if (isset($_POST['login'])) {

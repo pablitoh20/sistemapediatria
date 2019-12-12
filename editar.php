@@ -1,9 +1,8 @@
 <?php
-if (getenv('LIVE') == 1) {
-  $app="/app";
+session_start();
+if (!isset($_SESSION['user'])) {
+  echo "error";die();
 }else {
-  $app="";
-}
 include('header.php');
  ?>
 
@@ -104,3 +103,4 @@ include('header.php');
 
     });
     </script>
+<?php } ?>

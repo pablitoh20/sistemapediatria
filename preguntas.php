@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION['user'])) {
+  echo "error";die();
+}else {
 include('header.php');
   $curso="";
   $idCurso=$_GET['curso'];
@@ -115,3 +118,4 @@ include('header.php');
       <!-- End of Main Content -->
 
 </div>
+<?php } ?>

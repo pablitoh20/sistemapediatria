@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  echo "error";die();
+}else {
+
 include('header.php');
  ?>
 
@@ -89,3 +94,5 @@ include('header.php');
 
     });
     </script>
+<?php
+} ?>

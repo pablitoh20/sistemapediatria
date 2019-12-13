@@ -96,7 +96,27 @@ function preguntas_descarga_manual($curso,$ids,$respuesta){
       $pregunta.=" <strong style='background-color: #FFFF00'>RESPUESTA: ".$arrow['respuesta']."</strong><br>";
     }
   }
+  return $pregunta;
+}
+function preguntas_descarga_aleatorea($curso,$cantidad,$respuesta){
+  global $con;
 
 
+
+  $query="SELECT * FROM preguntas WHERE curso=$curso";
+  $query_result=pg_query($con,$query);
+
+  $indice=1;
+  $pregunta='';
+  $arrow=pg_fetch_all($query_result);
+  $seleccion =array_rand($arrow,$cantidad);
+  for ($i=0; $i < count($seleccion); $i++) {
+    $cuerpo_pregunta=$arrow[$seleccion[$i]]['pregunta'];
+    $pregunta.="$indice)$cuerpo_pregunta";
+    if ($respuesta) {
+      $pregunta.=" <strong style='background-color: #FFFF00'>RESPUESTA: ".$arrow[$seleccion[$i]]['respuesta']."</strong><br>";
+    }
+    $indice++;
+  }
   return $pregunta;
 }

@@ -4,8 +4,6 @@ if (!isset($_SESSION['user'])) {
   echo "error";die();
 }else {
 
-
-
 include('header.php'); ?>
 
 <body id="page-top">
@@ -32,8 +30,11 @@ include('header.php'); ?>
 
 
           <div class="container">
-            <img  src="img/tresminion.png" alt="">
+            <img style="width:100%;height:auto;max-width: 400px;"  src="img/tresminion.png" alt="">
+
           </div>
+
+
 
         </div>
         <!-- /.container-fluid -->

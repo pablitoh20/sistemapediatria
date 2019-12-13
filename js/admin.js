@@ -1,5 +1,11 @@
 $(document).ready(function(){
+
   $('.seleccionar').click(function(){
+    if ($(".seleccionar:checked").length > 0) {
+      $("#descarga").attr("disabled", false);
+    }else {
+      $("#descarga").attr("disabled", true);
+    }
     document.getElementById("seleccionadas").textContent=$(".seleccionar:checked").length
   });
 
@@ -10,7 +16,7 @@ $(document).ready(function(){
       }});
   });
   $(".eliminar_pregunta").click(function(){
-    alert($(".eliminar_pregunta").val());
+    eliminarPregunta($(".eliminar_pregunta").data('value'));
   });
 });
 function eliminarPregunta(id){

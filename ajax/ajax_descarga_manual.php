@@ -37,7 +37,9 @@ NOTA<br>
 
 
 SUGRENCIAS:
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 
 $preguntas";
 

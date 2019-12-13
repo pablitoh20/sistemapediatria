@@ -4,6 +4,8 @@ if (!isset($_SESSION['user'])) {
   echo "error";die();
 }else {
 include('header.php');
+include('funciones.php');
+
  ?>
 
 <body id="page-top">

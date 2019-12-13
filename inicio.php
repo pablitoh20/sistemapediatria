@@ -33,6 +33,10 @@ include('header.php'); ?>
             <img style="width:100%;height:auto;max-width: 400px;"  src="img/tresminion.png" alt="">
 
           </div>
+          <div class="container">
+            <img style="width:100%;height:auto;max-width: 400px;"  src="img/tenor.gif" alt="">
+
+          </div>
 
 
 
